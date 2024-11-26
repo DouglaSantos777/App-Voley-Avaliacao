@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:voleiball/constants/constants.dart';
 import 'package:voleiball/widgets/custom_buttom.dart';
+import 'package:voleiball/widgets/jogo_page.dart';
 import 'package:voleiball/widgets/team_widget.dart';
 
 void main() {
@@ -120,7 +121,12 @@ class Voley extends StatelessWidget {
                   ),
                   CustomButton(
                     text: "Iniciar",
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => const JogoPage()),
+                      );
+                    },
                     isOutlined: true,
                   ),
                 ],
