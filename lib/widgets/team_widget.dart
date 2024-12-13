@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/styles.dart';
+import 'package:voleiball/themes/styles.dart';
 
 class TeamWidget extends StatelessWidget {
   final String teamName;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/constants.dart';
+import 'package:voleiball/themes/constants.dart';
 
 class MainButton extends StatelessWidget {
   final String text;
@@ -32,7 +32,7 @@ class MainButton extends StatelessWidget {
                padding: padding,
               child: Text(
                 text,
-                style: TextStyle(color: colorText, fontSize: 30),
+                style: TextStyle(color: colorText, fontSize: 34),
               ),
             ),
           )

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/constants.dart';
+import 'package:voleiball/themes/constants.dart';
 
 import 'package:voleiball/widgets/final_score.dart';
 import 'package:voleiball/widgets/time_display.dart';
@@ -13,14 +13,14 @@ class ScorePage extends StatelessWidget {
       List<Map<String, dynamic>> teamAInfo = [
         {"teamName": "Ziraldos", "points": 25, "color": kButtonColor},
         {"teamName": "Ziraldos", "points": 25, "color": kButtonColor},
-        {"teamName": "Ziraldos", "points": 10, "color": kAccentColor},
+        {"teamName": "Ziraldos", "points": 10, "color": kYellowColor},
         {"teamName": "Sparrings", "points": 25, "color": kButtonColor},
       ];
       List<Map<String, dynamic>> teamBInfo = [
-        {"teamName": "Sparrings", "points": 10, "color": kAccentColor},
-        {"teamName": "Sicranos", "points": 10, "color": kAccentColor},
+        {"teamName": "Sparrings", "points": 10, "color": kYellowColor},
+        {"teamName": "Sicranos", "points": 10, "color": kYellowColor},
         {"teamName": "Autoconvidados", "points": 25, "color": kButtonColor},
-        {"teamName": "Autoconvidados", "points": 10, "color": kAccentColor},
+        {"teamName": "Autoconvidados", "points": 10, "color": kYellowColor},
       ];
 
       return Scaffold(
@@ -52,10 +52,14 @@ class ScorePage extends StatelessWidget {
                     const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
-                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
-                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
-                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
+                        Icon(Icons.bar_chart_sharp,
+                            color: kWhiteColor, size: 30),
+                        Icon(Icons.bar_chart_sharp,
+                            color: kWhiteColor, size: 30),
+                        Icon(Icons.bar_chart_sharp,
+                            color: kWhiteColor, size: 30),
+                        Icon(Icons.bar_chart_sharp,
+                            color: kWhiteColor, size: 30),
                       ],
                     ),
                     FinalScore(
@@ -91,11 +95,11 @@ class ScorePage extends StatelessWidget {
                       children: [
                         Text(
                           "Ziraldos: ",
-                          style: TextStyle(color: kWhiteColor, fontSize: 22),
+                          style: TextStyle(color: kWhiteColor, fontSize: 28),
                         ),
                         Text(
                           "3",
-                          style: TextStyle(color: kButtonColor, fontSize: 22),
+                          style: TextStyle(color: kButtonColor, fontSize: 28),
                         ),
                       ],
                     ),
@@ -103,11 +107,11 @@ class ScorePage extends StatelessWidget {
                       children: [
                         Text(
                           "Sicranos: ",
-                          style: TextStyle(color: kWhiteColor, fontSize: 22),
+                          style: TextStyle(color: kWhiteColor, fontSize: 28),
                         ),
                         Text(
                           "1",
-                          style: TextStyle(color: kButtonColor, fontSize: 22),
+                          style: TextStyle(color: kButtonColor, fontSize: 28),
                         ),
                       ],
                     ),
@@ -115,11 +119,11 @@ class ScorePage extends StatelessWidget {
                       children: [
                         Text(
                           "Autoconvidados: ",
-                          style: TextStyle(color: kWhiteColor, fontSize: 22),
+                          style: TextStyle(color: kWhiteColor, fontSize: 28),
                         ),
                         Text(
                           "8",
-                          style: TextStyle(color: kButtonColor, fontSize: 22),
+                          style: TextStyle(color: kButtonColor, fontSize: 28),
                         ),
                       ],
                     ),
@@ -127,18 +131,20 @@ class ScorePage extends StatelessWidget {
                       children: [
                         Text(
                           "Sparrings: ",
-                          style: TextStyle(color: kWhiteColor, fontSize: 22),
+                          style: TextStyle(color: kWhiteColor, fontSize: 28),
                         ),
                         Text(
                           "8",
-                          style: TextStyle(color: kButtonColor, fontSize: 22),
+                          style: TextStyle(color: kButtonColor, fontSize: 28),
                         ),
                       ],
                     ),
                   ],
                 ),
               ),
-              const SizedBox(height: 5,)
+              const SizedBox(
+                height: 10,
+              )
             ],
           ),
         ),

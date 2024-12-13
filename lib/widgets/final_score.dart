@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/constants.dart';
+import 'package:voleiball/themes/constants.dart';
 import 'package:voleiball/widgets/team_simbol.dart';
 
 class FinalScore extends StatelessWidget {
@@ -25,7 +25,7 @@ class FinalScore extends StatelessWidget {
         ),
       ),
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           Expanded(
             child: Column(
@@ -33,24 +33,34 @@ class FinalScore extends StatelessWidget {
               children: [
                 const TeamSimbol(letter: 'A'),
                 for (var info in teamAInfo)
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Text(
-                        "${info['teamName']} ",
-                        style: const TextStyle(color: kWhiteColor, fontSize: 18),
-                      ),
-                      Text(
-                        "${info['points']}",
-                        style: TextStyle(color: info['color'], fontSize: 20),
-                      ),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text(
+                          info['teamName'],
+                          style: const TextStyle(
+                            color: kWhiteColor,
+                            fontSize: 18,
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          "${info['points']}",
+                          style: TextStyle(
+                            color: info['color'],
+                            fontSize: 20,
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
               ],
             ),
           ),
           const VerticalDivider(
-            thickness: 1,
+            thickness: 4,
             color: kWhiteColor,
             width: 20,
           ),
@@ -61,26 +71,25 @@ class FinalScore extends StatelessWidget {
                 const TeamSimbol(letter: 'B'),
                 for (var info in teamBInfo)
                   Padding(
-                    padding: const EdgeInsets.only(left: 20),
+                    padding: const EdgeInsets.symmetric(vertical: 4.0),
                     child: Row(
-                      mainAxisAlignment: MainAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Row(
-                          children: [
-                            Text(
-                              "${info['points']}",
-                              style: TextStyle(
-                                color: info['color'],
-                                fontSize: 18,
-                              ),
-                            ),
-                            Text(
-                              " ${info['teamName']}",
-                              style:
-                                  const TextStyle(color: kWhiteColor, fontSize: 20),
-                            ),
-                          ],
-                        )
+                        Text(
+                          "${info['points']}",
+                          style: TextStyle(
+                            color: info['color'],
+                            fontSize: 18,
+                          ),
+                        ),
+                        const SizedBox(width: 5),
+                        Text(
+                          info['teamName'],
+                          style: const TextStyle(
+                            color: kWhiteColor,
+                            fontSize: 20,
+                          ),
+                        ),
                       ],
                     ),
                   ),

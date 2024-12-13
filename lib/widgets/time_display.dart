@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/constants.dart';
+import 'package:voleiball/themes/constants.dart';
 
 class TimeDisplay extends StatelessWidget {
   final String mainTime;

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/theme.dart';
+import 'package:voleiball/themes/theme.dart';
 import 'package:voleiball/screens/home_screen.dart';
 
 void main() {

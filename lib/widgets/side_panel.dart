@@ -22,7 +22,7 @@ class SidePanel extends StatelessWidget {
           : CrossAxisAlignment.end, 
       children: List.generate(actions.length, (index) {
         return Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
+          padding: const EdgeInsets.symmetric(vertical: 5.0),
           child: GameAction(
             text: actions[index],
             isLeftSide: isLeftSide, 

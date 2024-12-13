@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:voleiball/aux/constants.dart';
-import 'package:voleiball/screens/end_set_page.dart';
+import 'package:voleiball/themes/constants.dart';
+import 'package:voleiball/screens/modal_page.dart';
 import 'package:voleiball/screens/score_page.dart';
 import 'package:voleiball/widgets/main_button.dart';
-import 'package:voleiball/widgets/score_board.dart';
+import 'package:voleiball/widgets/voley_court.dart';
 import 'package:voleiball/widgets/side_panel.dart';
 import 'package:voleiball/widgets/team_simbol.dart';
 import 'package:voleiball/widgets/time_display.dart';
 
 class GamePage extends StatefulWidget {
   const GamePage({super.key});
+
   @override
   State<GamePage> createState() => _GamePageState();
 }
@@ -38,51 +39,67 @@ class _GamePageState extends State<GamePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: kBackgroundGame,
-      appBar: AppBar(
-        iconTheme: const IconThemeData(
-          color: kWhiteColor,
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              showModal(context);
-            },
-            icon: const Icon(Icons.settings, size: 30),
-          ),
-        ],
-        backgroundColor: kBackgroundGame,
-      ),
       body: SafeArea(
-        child: Center(
-          child: Column(
-            children: [
-              Expanded(
+        child: Column(
+          children: [
+            Flexible(
+              flex: 1,
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const SidePanel(
+                    const BackButton(
+                      color: kWhiteColor,
+                    ),
+                    IconButton(
+                      onPressed: () {
+                        showModal(context);
+                      },
+                      icon: const Icon(Icons.settings, size: 35),
+                      color: kWhiteColor,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+            Flexible(
+              flex: 9,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Flexible(
+                    flex: 1,
+                    child: SidePanel(
                       actions: ["Ace", "Ataque", "Bloqueio", "Erro"],
                       onButtonPressed: [],
                       isLeftSide: true,
                     ),
-                    Column(
+                  ),
+                  Flexible(
+                    flex: 2,
+                    child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
-                        SizedBox(
-                          width: MediaQuery.of(context).size.width * 0.5,
-                          child: const Expanded(
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                              children: [
-                                TeamSimbol(letter: "A", teamName: "Ziraldos"),
-                                TeamSimbol(
-                                    letter: "B", teamName: "Autoconvidados"),
-                              ],
+                        const Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
+                          children: [
+                            Expanded(
+                              child: TeamSimbol(
+                                letter: "A",
+                                teamName: "Ziraldos",
+                              ),
                             ),
-                          ),
+                            Expanded(
+                              child: TeamSimbol(
+                                letter: "B",
+                                teamName: "Autoconvidados",
+                              ),
+                            ),
+                          ],
                         ),
-                        ScoreBoard(
+                        VoleyCourt(
                           teamAScore: "12",
                           teamBScore: "22",
                           teamAName: "Ziraldos",
@@ -108,16 +125,18 @@ class _GamePageState extends State<GamePage> {
                         ),
                       ],
                     ),
-                    const SidePanel(
+                  ),
+                  const Flexible(
+                    child: SidePanel(
                       actions: ["Ace", "Ataque", "Bloqueio", "Erro"],
                       onButtonPressed: [],
                       isLeftSide: false,
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

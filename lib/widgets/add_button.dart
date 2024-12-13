@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/constants.dart';
+import 'package:voleiball/themes/constants.dart';
 
 class AddButton extends StatelessWidget {
   final String text;
@@ -13,35 +13,29 @@ class AddButton extends StatelessWidget {
     this.text = '+',
     this.backgroundColor = kButtonColor,
     this.textColor = kWhiteColor,
-    this.fontSize = 40, 
+    this.fontSize = 35,
     this.fontWeight = FontWeight.w300,
   });
 
   @override
   Widget build(BuildContext context) {
-    
-    return Padding(
-      padding: const EdgeInsets.all(0),
-      child: FloatingActionButton(
-        onPressed: (){},       
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(100),
-        ),
-        backgroundColor: backgroundColor,
-        child: Padding(
-          padding: const EdgeInsets.only(),
-          child: Center(  
-            child: Text(
-              text,
-              style: TextStyle(
-                fontSize: fontSize, 
-                fontWeight: fontWeight,  
-                color: textColor,
-              ),
-            ),
-          ),
+  return FloatingActionButton(
+    onPressed: () {},
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(100),
+    ),
+    backgroundColor: backgroundColor,
+    child: Center(
+      child: Text(
+        text,
+        style: TextStyle(
+          fontSize: fontSize,
+          fontWeight: fontWeight,
+          color: textColor,
         ),
       ),
-    );
-  }
+    ),
+  );
+}
+
 }

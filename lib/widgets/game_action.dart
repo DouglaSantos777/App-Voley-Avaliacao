@@ -14,12 +14,13 @@ class GameAction extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisSize: MainAxisSize.min,
+      mainAxisAlignment: MainAxisAlignment.center,
       children: isLeftSide
           ? [
               const AddButton(),
-              const SizedBox(width: 20),
+              const SizedBox(width: 10),
               SizedBox(
-                width: 115,
                 child: Text(
                   text,
                   style: const TextStyle(
@@ -31,18 +32,15 @@ class GameAction extends StatelessWidget {
               ),
             ]
           : [
-              SizedBox(
-                width: 115,
-                child: Text(
-                  text,
-                  style: const TextStyle(
-                    fontSize: 30,
-                    fontWeight: FontWeight.w500,
-                    color: Colors.white,
-                  ),
+              Text(
+                text,
+                style: const TextStyle(
+                  fontSize: 30,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
                 ),
               ),
-              const SizedBox(width: 20),
+              const SizedBox(width: 10),
               const AddButton(),
             ],
     );

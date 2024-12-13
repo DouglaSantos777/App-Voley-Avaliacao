@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/aux/constants.dart';
-import 'package:voleiball/aux/styles.dart';
+import 'package:voleiball/themes/constants.dart';
 import 'package:voleiball/widgets/add_button.dart';
+import 'package:voleiball/widgets/header.dart';
 import 'package:voleiball/widgets/main_button.dart';
 import 'package:voleiball/screens/game_page.dart';
 import 'package:voleiball/widgets/team_widget.dart';
+import 'package:voleiball/widgets/times_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,60 +21,18 @@ class HomeScreen extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                      "assets/images/ball.png",
-                      width: 45,
-                      height: 45,
-                    ),
-                    const SizedBox(width: 15),
-                    const Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        "Volley",
-                        style: TextStyle(
-                            color: kWhiteColor, fontSize: 42, height: .9),
-                        textAlign: TextAlign.start,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: 8),
-                        child: Text(
-                          "do fim de semana",
-                          style: TextStyle(
-                              fontSize: 9, color: kWhiteColor, height: 1),
-                          textAlign: TextAlign.start,
-                        ),
-                      )
-                    ],
-                  ),
-                  ],
+                const Header(
+                  imagePath: "assets/images/ball.png",
+                  title: "Volley",
+                  subtitle: "do fim de semana",
                 ),
-                Row(
+                const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Padding(
-                      padding: const EdgeInsets.only(left: 5),
-                      child: Container(
-                        width: 55,
-                        height: 200,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: kWhiteColor, width: 2),
-                          color: kSecondaryColor,
-                        ),
-                        child: const RotatedBox(
-                          quarterTurns: 3,
-                          child: Text(
-                            "TIMES",
-                            style: AppTextStyles.headline3,
-                            textAlign: TextAlign.center,
-                          ),
-                        ),
-                      ),
-                    ),
-                    const Expanded(
+                        padding: EdgeInsets.only(left: 5),
+                        child: TimesCard(title: "TIMES")),
+                    Expanded(
                       child: Column(
                         children: [
                           TeamWidget(teamName: 'Sicranos', playerCount: '3'),
@@ -113,9 +72,7 @@ class HomeScreen extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.only(right: 20),
-                      child: AddButton(
-                        
-                      ),
+                      child: AddButton(),
                     ),
                   ],
                 )
