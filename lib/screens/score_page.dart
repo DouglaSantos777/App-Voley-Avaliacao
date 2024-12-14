@@ -50,7 +50,7 @@ class ScorePage extends StatelessWidget {
               child: Container(
                 width: double.infinity,
                 padding:
-                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 10),
                 color: kBackgroundGame,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -82,74 +82,83 @@ class ScorePage extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SizedBox(
-                        height: 20,
-                      ),
-                      Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
-                      Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
-                      Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
-                      Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
-                    ],
+                  Flexible(
+                    flex: 1,
+                    child: const Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SizedBox(
+                          height: 20,
+                        ),
+                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
+                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
+                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
+                        Icon(Icons.bar_chart_sharp, color: kWhiteColor, size: 30),
+                      ],
+                    ),
                   ),
-                  FinalScore(
-                    teamAInfo: [
-                      {
-                        "teamName": "Ziraldos",
-                        "points": 25,
-                        "color": kButtonColor
-                      },
-                      {
-                        "teamName": "Ziraldos",
-                        "points": 25,
-                        "color": kButtonColor
-                      },
-                      {
-                        "teamName": "Ziraldos",
-                        "points": 10,
-                        "color": kYellowColor
-                      },
-                      {
-                        "teamName": "Sparrings",
-                        "points": 25,
-                        "color": kButtonColor
-                      },
-                    ],
-                    teamBInfo: [
-                      {
-                        "teamName": "Sparrings",
-                        "points": 10,
-                        "color": kYellowColor
-                      },
-                      {
-                        "teamName": "Sicranos",
-                        "points": 10,
-                        "color": kYellowColor
-                      },
-                      {
-                        "teamName": "Autoconvidados",
-                        "points": 25,
-                        "color": kButtonColor
-                      },
-                      {
-                        "teamName": "Autoconvidados",
-                        "points": 10,
-                        "color": kYellowColor
-                      },
-                    ],
+                  Flexible(
+                    flex: 3,
+                    child: FinalScore(
+                      teamAInfo: [
+                        {
+                          "teamName": "Ziraldos",
+                          "points": 25,
+                          "color": kButtonColor
+                        },
+                        {
+                          "teamName": "Ziraldos",
+                          "points": 25,
+                          "color": kButtonColor
+                        },
+                        {
+                          "teamName": "Ziraldos",
+                          "points": 10,
+                          "color": kYellowColor
+                        },
+                        {
+                          "teamName": "Sparrings",
+                          "points": 25,
+                          "color": kButtonColor
+                        },
+                      ],
+                      teamBInfo: [
+                        {
+                          "teamName": "Sparrings",
+                          "points": 10,
+                          "color": kYellowColor
+                        },
+                        {
+                          "teamName": "Sicranos",
+                          "points": 10,
+                          "color": kYellowColor
+                        },
+                        {
+                          "teamName": "Autoconvidados",
+                          "points": 25,
+                          "color": kButtonColor
+                        },
+                        {
+                          "teamName": "Autoconvidados",
+                          "points": 10,
+                          "color": kYellowColor
+                        },
+                      ],
+                    ),
                   ),
-                  const Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      SizedBox(height: 20),
-                      TimeDisplay(mainTime: "0:24'", subTime: "90''"),
-                      TimeDisplay(mainTime: "0:14'", subTime: "23''"),
-                      TimeDisplay(mainTime: "0:35'", subTime: "04''"),
-                      TimeDisplay(mainTime: "0:11'", subTime: "29''"),
-                    ],
+                  Flexible(
+                    flex: 1,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        SizedBox(height: 20),
+                        TimeDisplay(mainTime: "0:24'", subTime: "90''"),
+                        TimeDisplay(mainTime: "0:14'", subTime: "23''"),
+                        TimeDisplay(mainTime: "0:35'", subTime: "04''"),
+                        TimeDisplay(mainTime: "0:11'", subTime: "29''"),
+                      ],
+                    ),
                   ),
                 ],
               ),

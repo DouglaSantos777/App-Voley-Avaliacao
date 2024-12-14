@@ -16,7 +16,7 @@ class FinalScore extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Container(
-        width: MediaQuery.of(context).size.width * 0.6,
+        width: MediaQuery.of(context).size.width * 0.7,
         height: MediaQuery.of(context).size.height * 0.55,
         decoration: BoxDecoration(
           color: kOrangeColor,
