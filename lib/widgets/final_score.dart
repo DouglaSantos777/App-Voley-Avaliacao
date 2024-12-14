@@ -14,89 +14,109 @@ class FinalScore extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: MediaQuery.of(context).size.width * 0.5,
-      height: MediaQuery.of(context).size.height * 0.5,
-      decoration: BoxDecoration(
-        color: kOrangeColor,
-        border: Border.all(
-          color: kWhiteColor,
-          width: 3,
-        ),
-      ),
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const TeamSimbol(letter: 'A'),
-                for (var info in teamAInfo)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          info['teamName'],
-                          style: const TextStyle(
-                            color: kWhiteColor,
-                            fontSize: 18,
-                          ),
-                        ),
-                        const SizedBox(width: 5),
-                        Text(
-                          "${info['points']}",
-                          style: TextStyle(
-                            color: info['color'],
-                            fontSize: 20,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-              ],
-            ),
-          ),
-          const VerticalDivider(
-            thickness: 4,
+    return Center(
+      child: Container(
+        width: MediaQuery.of(context).size.width * 0.6,
+        height: MediaQuery.of(context).size.height * 0.55,
+        decoration: BoxDecoration(
+          color: kOrangeColor,
+          border: Border.all(
             color: kWhiteColor,
-            width: 20,
+            width: 3,
           ),
-          Expanded(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                const TeamSimbol(letter: 'B'),
-                for (var info in teamBInfo)
-                  Padding(
-                    padding: const EdgeInsets.symmetric(vertical: 4.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text(
-                          "${info['points']}",
-                          style: TextStyle(
-                            color: info['color'],
-                            fontSize: 18,
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const TeamSimbol(letter: 'A'),
+                  for (var info in teamAInfo)
+                    Padding(
+                      padding: const EdgeInsets.symmetric(vertical: 0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.end,
+                        children: [
+                          Flexible(
+                            flex: 3,
+                            child: Text(
+                              info['teamName'],
+                              style: const TextStyle(
+                                color: kWhiteColor,
+                                fontSize: 20,
+                              ),
+                            ),
                           ),
-                        ),
-                        const SizedBox(width: 5),
-                        Text(
-                          info['teamName'],
-                          style: const TextStyle(
-                            color: kWhiteColor,
-                            fontSize: 20,
+                          Spacer(),
+                          Flexible(
+                            flex: 1,
+                            child: Text(
+                              "${info['points']}",
+                              style: TextStyle(
+                                color: info['color'],
+                                fontSize: 24,
+                              ),
+                            ),
                           ),
-                        ),
-                      ],
+                          Spacer(),
+                        ],
+                      ),
                     ),
-                  ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+            const VerticalDivider(
+              thickness: 5,
+              color: kWhiteColor,
+              width: 20,
+            ),
+            Expanded(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const TeamSimbol(letter: 'B'),
+                  for (var info in teamBInfo)
+                    Padding(
+                      padding:
+                          const EdgeInsets.symmetric(vertical:0),
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Flexible(
+                            flex: 1,
+                            child: Spacer()
+                            ),
+                          Flexible(
+                            flex: 1,
+                            child: Text(
+                              "${info['points']}",
+                              style: TextStyle(
+                                color: info['color'],
+                                fontSize: 24,
+                              ),
+                            ),
+                          ),
+                         Spacer(),
+                          Flexible(
+                            flex: 5,
+                            child: Text(
+                              info['teamName'],
+                              style: const TextStyle(
+                                color: kWhiteColor,
+                                fontSize: 20,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                ],
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:voleiball/themes/styles.dart';
 
+
 class TeamWidget extends StatelessWidget {
   final String teamName;
   final String playerCount;
@@ -17,14 +18,14 @@ class TeamWidget extends StatelessWidget {
         children: [
           Text(
             teamName,
-            style: AppTextStyles.headline4,
+            style: AppTextStyles.style4,
             ),
           const SizedBox(
             width: 5,
           ),
           Text(
             playerCount,
-            style: AppTextStyles.headline5,
+            style: AppTextStyles.style5,
           ),
           const RotatedBox(
             quarterTurns: 3,
@@ -32,7 +33,7 @@ class TeamWidget extends StatelessWidget {
               width: 45,
               child: Text(
                 "jogadores",
-                style: AppTextStyles.headline6,
+                style: AppTextStyles.style6,
               ),
             ),
           ),

@@ -3,14 +3,10 @@ import 'package:voleiball/themes/constants.dart';
 
 class AppTextStyles {
   static const TextStyle style1 =
-      TextStyle(fontSize: 42,
-       color: kWhiteColor, height: 1);
+      TextStyle(fontSize: 42, color: kWhiteColor, height: 1);
 
   static const TextStyle style2 = TextStyle(
-      fontSize: 9, 
-      fontWeight: FontWeight.w500, 
-      color: kWhiteColor,
-       height: 1);
+      fontSize: 9, fontWeight: FontWeight.w500, color: kWhiteColor, height: 1);
 
   static const TextStyle style3 = TextStyle(
     color: kWhiteColor,
@@ -24,10 +20,7 @@ class AppTextStyles {
   );
 
   static const TextStyle style5 =
-      TextStyle(
-        color: kButtonColor, 
-        fontSize: 45,
-        height: 1);
+      TextStyle(color: kButtonColor, fontSize: 45, height: 1);
 
   static const TextStyle style6 = TextStyle(
     color: kButtonColor,
@@ -35,11 +28,18 @@ class AppTextStyles {
     fontWeight: FontWeight.bold,
   );
 
- static const TextStyle style7 = TextStyle(
+  static const TextStyle style7 = TextStyle(
     color: kButtonColor,
     fontSize: 25,
     fontWeight: FontWeight.w500,
     height: 1,
   );
 
+  static const TextStyle style8 = TextStyle(color: kWhiteColor, fontSize: 20);
+
+  static const TextStyle style9 = TextStyle(color: kWhiteColor, fontSize: 16);
+
+  static const TextStyle fontConcert = TextStyle(
+    fontFamily: 'ConcertOne',
+  );
 }

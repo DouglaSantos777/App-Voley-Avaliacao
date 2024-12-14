@@ -25,33 +25,43 @@ class ScorePage extends StatelessWidget {
 
       return Scaffold(
         backgroundColor: kBackgroundGame,
-        appBar: AppBar(
-          title: const Text(
-            "PLACAR GERAL",
-            style: TextStyle(color: kButtonColor, fontSize: 24),
-          ),
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.show_chart, size: 30),
-            ),
-          ],
-          centerTitle: true,
-          backgroundColor: kBackgroundGame,
-          iconTheme: const IconThemeData(color: kWhiteColor),
-        ),
         body: SafeArea(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Flexible(
-                flex: 4,
+                flex: 2,
+                child: Container(
+                width: double.infinity,
+                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                color: kBackgroundGame,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                     const BackButton(
+                        color: kWhiteColor,
+                      ),
+                    const Text(
+                      "PLACAR GERAL",
+                      style: TextStyle(color: kButtonColor, fontSize: 24),
+                    ),
+                    IconButton(
+                      onPressed: () {},
+                      icon: const Icon(Icons.show_chart, size: 30, color: kWhiteColor),
+                    ),
+                  ],
+                ),
+                            ),
+              ),
+              Flexible(
+                flex: 8,
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
                     const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(height: 30,),
                         Icon(Icons.bar_chart_sharp,
                             color: kWhiteColor, size: 30),
                         Icon(Icons.bar_chart_sharp,
@@ -69,6 +79,7 @@ class ScorePage extends StatelessWidget {
                     const Column(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
+                        SizedBox(height: 30),
                         TimeDisplay(mainTime: "0:24'", subTime: "90''"),
                         TimeDisplay(mainTime: "0:14'", subTime: "23''"),
                         TimeDisplay(mainTime: "0:35'", subTime: "04''"),
@@ -83,11 +94,11 @@ class ScorePage extends StatelessWidget {
                 decoration: const BoxDecoration(
                   color: kSecondaryColor,
                   border: Border(
-                    top: BorderSide(color: kWhiteColor, width: 1),
-                    bottom: BorderSide(color: kWhiteColor, width: 1),
+                    top: BorderSide(color: kWhiteColor, width: 3),
+                    bottom: BorderSide(color: kWhiteColor, width: 3),
                   ),
                 ),
-                padding: const EdgeInsets.symmetric(vertical: 10),
+                padding: const EdgeInsets.symmetric(vertical: 6),
                 child: const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -142,9 +153,7 @@ class ScorePage extends StatelessWidget {
                   ],
                 ),
               ),
-              const SizedBox(
-                height: 10,
-              )
+              SizedBox(height: 10,)
             ],
           ),
         ),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:voleiball/themes/constants.dart';
+import 'package:voleiball/widgets/voley_court_team.dart';
 
 class VoleyCourt extends StatelessWidget {
   final String teamAScore;
@@ -40,7 +41,11 @@ class VoleyCourt extends StatelessWidget {
               isServing: isTeamAServing,
             ),
           ),
-          const VerticalLine(),
+          const VerticalDivider(
+            thickness: 3,
+            color: kWhiteColor,
+            width: 20,
+          ),
           Expanded(
             child: VoleyCourtTeam(
               score: teamBScore,
@@ -49,67 +54,6 @@ class VoleyCourt extends StatelessWidget {
           ),
         ],
       ),
-    );
-  }
-}
-
-class VerticalLine extends StatelessWidget {
-  const VerticalLine({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return const VerticalDivider(
-      thickness: 2,
-      color: kWhiteColor,
-      width: 20,
-    );
-  }
-}
-
-class VoleyCourtTeam extends StatelessWidget {
-  final String score;
-  final bool isServing;
-
-  const VoleyCourtTeam({
-    super.key,
-    required this.score,
-    required this.isServing,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      crossAxisAlignment: CrossAxisAlignment.center,
-      children: [
-        if (isServing)
-          Flexible(
-            
-            child: Align(
-              alignment: Alignment.center,
-              child: Image.asset(
-                "assets/images/ball.png",
-                width: 50,
-                height: 50,
-              ),
-            ),
-          ),
-        Flexible(
-         
-          child: Align(
-            alignment: Alignment.bottomCenter,
-            child: Text(
-              score,
-              style: const TextStyle(
-                color: kWhiteColor,
-                fontSize: 50,
-              ),
-            ),
-          ),
-        ),
-      ],
     );
   }
 }

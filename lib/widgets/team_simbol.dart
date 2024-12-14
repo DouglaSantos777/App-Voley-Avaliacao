@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:voleiball/themes/constants.dart';
 import 'package:voleiball/themes/styles.dart';
 
+
 class TeamSimbol extends StatelessWidget {
   final String letter;
   final double size;
@@ -45,7 +46,7 @@ class TeamSimbol extends StatelessWidget {
         if (teamName.isNotEmpty)
           Text(
             teamName,
-            style: AppTextStyles.headline7,
+            style: AppTextStyles.style7,
           ),
       ],
     );

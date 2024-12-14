@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/themes/constants.dart';
+import 'package:voleiball/themes/styles.dart';
 
 class TimeDisplay extends StatelessWidget {
   final String mainTime;
@@ -11,8 +11,8 @@ class TimeDisplay extends StatelessWidget {
     super.key,
     required this.mainTime,
     required this.subTime,
-    this.mainTimeStyle = const TextStyle(color: kWhiteColor, fontSize: 20), 
-    this.subTimeStyle = const TextStyle(color: kWhiteColor, fontSize: 16),  
+    this.mainTimeStyle = AppTextStyles.style8, 
+    this.subTimeStyle = AppTextStyles.style9,  
   });
 
   @override

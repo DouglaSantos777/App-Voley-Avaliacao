@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:voleiball/themes/constants.dart';
+
 import 'package:voleiball/screens/home_screen.dart';
+import 'package:voleiball/themes/constants.dart';
 import 'package:voleiball/widgets/main_button.dart';
 
 void showModal(BuildContext context) {
@@ -68,7 +69,7 @@ void showModal(BuildContext context) {
                     isOutlined: true,
                     padding:
                         const EdgeInsets.symmetric(vertical: 2, horizontal: 12),
-                    colorText: kAccentColor,
+                    colorText: kYellowColor,
                   )
                 ],
               ),
