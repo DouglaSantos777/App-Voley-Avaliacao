@@ -45,19 +45,25 @@ class _GamePageState extends State<GamePage> {
             Flexible(
               flex: 1,
               child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const BackButton(
-                      color: kWhiteColor,
+                    IconButton(
+                      icon: const Icon(Icons.arrow_back,
+                      size: 35, color: kWhiteColor),
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
                     ),
                     IconButton(
                       onPressed: () {
                         showModal(context);
                       },
-                      icon: const Icon(Icons.settings, size: 35),
-                      color: kWhiteColor,
+                      icon: const Icon(Icons.settings,
+                          size: 35, 
+                          color: kWhiteColor),
                     ),
                   ],
                 ),
@@ -127,6 +133,7 @@ class _GamePageState extends State<GamePage> {
                     ),
                   ),
                   const Flexible(
+                    flex: 1,
                     child: SidePanel(
                       actions: ["Ace", "Ataque", "Bloqueio", "Erro"],
                       onButtonPressed: [],

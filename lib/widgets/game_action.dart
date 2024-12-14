@@ -19,7 +19,7 @@ class GameAction extends StatelessWidget {
       children: isLeftSide
           ? [
               const AddButton(),
-              const SizedBox(width: 10),
+              const SizedBox(width: 20),
               SizedBox(
                 child: Text(
                   text,
@@ -40,7 +40,7 @@ class GameAction extends StatelessWidget {
                   color: Colors.white,
                 ),
               ),
-              const SizedBox(width: 10),
+              const SizedBox(width: 20),
               const AddButton(),
             ],
     );
